@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Priya 🎂💻</title>
+<title>Happy Birthday Priya 🎂</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: radial-gradient(circle at top, #020617, #000);
-  color: #e5e7eb;
   font-family: "Courier New", monospace;
+  color: #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
   background: #020617;
   border-radius: 16px;
   padding: 18px;
-  box-shadow: 0 0 28px rgba(56,189,248,0.4);
+  box-shadow: 0 0 30px rgba(56,189,248,0.45);
   text-align: center;
 }
 
@@ -52,16 +52,20 @@ body {
 .green { color: #22c55e; }
 .blue { color: #38bdf8; }
 .yellow { color: #facc15; }
-.hidden { display: none; }
+
+.hidden {
+  display: none;
+}
 
 button {
   margin-top: 14px;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 10px;
   background: #38bdf8;
   color: #020617;
   font-weight: bold;
+  font-size: 15px;
   cursor: pointer;
   width: 100%;
 }
@@ -72,7 +76,6 @@ button {
 
 <div class="container">
 
-  <!-- Photo -->
   <img src="priya.jpg" alt="Priya" class="photo">
 
   <div class="title">Initializing Birthday Program…</div>
@@ -86,26 +89,26 @@ Happy Birthday <span class="blue">Priya Mishra</span> 🎉💖
 <span class="yellow">Happy Birthday my chai partner ☕</span>
 
 CS Major detected 👩‍💻  
-Version successfully upgraded ✔  
+Version upgraded successfully ✔  
 
 May your life have:
 • Infinite success loops  
 • Zero runtime errors  
-• Clean logic & endless chai ☕  
+• Endless chai breaks ☕  
 
-May your code always compile,  
-your dreams always execute,  
-and your smile never fade ✨  
+Keep coding, keep smiling,  
+and keep being amazing ✨  
 
 <span class="green">>>> END PROGRAM</span>
   </div>
 
-  <button onclick="playMusic()">▶ Tap to play Happy Birthday 🎶</button>
+  <button id="playBtn">▶ Tap to Play Happy Birthday 🎶</button>
 
 </div>
 
-<audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c3f2a67a5.mp3" type="audio/mpeg">
+<!-- AUDIO: MOBILE-SAFE -->
+<audio id="music" preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/08/26/audio_7f3d6e2e7b.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -117,27 +120,32 @@ const lines = [
   "console.log('Upgrading Priya.exe...');",
   "",
   "Compiling love, laughter & code...",
-  "Running birthday surprise...",
+  "Launching birthday surprise...",
   ""
 ];
 
 let i = 0;
 const terminal = document.getElementById("terminal");
 const wish = document.getElementById("wish");
+const music = document.getElementById("music");
+const playBtn = document.getElementById("playBtn");
 
 function typeLine() {
   if (i < lines.length) {
     terminal.innerHTML += lines[i] + "\n";
     i++;
-    setTimeout(typeLine, 600);
+    setTimeout(typeLine, 550);
   } else {
     setTimeout(() => wish.classList.remove("hidden"), 800);
   }
 }
 
-function playMusic() {
-  document.getElementById("music").play();
-}
+playBtn.addEventListener("click", () => {
+  music.volume = 1.0;
+  music.muted = false;
+  music.play();
+  playBtn.innerText = "🎶 Playing… Enjoy!";
+});
 
 typeLine();
 </script>
