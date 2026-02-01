@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Priya Mishra 🎂</title>
+<title>Happy Birthday Priya 🎂</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -53,9 +53,7 @@ body {
 .blue { color: #38bdf8; }
 .yellow { color: #facc15; }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 button {
   margin-top: 14px;
@@ -86,7 +84,7 @@ button {
 <span class="green">>>> OUTPUT</span>
 
 Happy Birthday <span class="blue">Priya Mishra</span> 🎉💖  
-<span class="yellow">Happy Birthday My Chai Partner ☕</span>
+<span class="yellow">Happy Birthday my chai partner ☕</span>
 
 CS Major detected 👩‍💻  
 Version upgraded successfully ✔  
@@ -102,13 +100,12 @@ and keep being amazing ✨
 <span class="green">>>> END PROGRAM</span>
   </div>
 
-  <button id="playBtn">▶ Tap to Play Happy Birthday 🎶</button>
+  <button id="playBtn">▶ Play Happy Birthday 🎶</button>
 
 </div>
 
-<!-- AUDIO: MOBILE-SAFE -->
 <audio id="music" preload="auto">
-  <source src="https://cdn.pixabay.com/audio/2022/08/26/audio_7f3d6e2e7b.mp3" type="audio/mpeg">
+  <source src="happy-birthday.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -141,10 +138,10 @@ function typeLine() {
 }
 
 playBtn.addEventListener("click", () => {
-  music.volume = 1.0;
-  music.muted = false;
+  music.currentTime = 0;
+  music.volume = 1;
   music.play();
-  playBtn.innerText = "🎶 Playing… Enjoy!";
+  playBtn.innerText = "🎶 Playing…";
 });
 
 typeLine();
@@ -152,4 +149,3 @@ typeLine();
 
 </body>
 </html>
-
